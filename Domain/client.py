@@ -7,17 +7,17 @@ class Client:
         self.__cnp = cnp
         self.last_name = last_name
         self.first_name = first_name
-        self.age_group = Client.__get_age_group(cnp)
+        self.age_group = Client.get_age_group(cnp)
         self.email = email
 
     def __str__(self):
-        return f'{self.__cnp}, {self.last_name}, {self.first_name}'
+        return f'{self.__cnp}, {self.last_name}, {self.first_name}, {self.email}'
 
     def get_cnp(self):
         return self.__cnp
 
     @staticmethod
-    def __get_age_group(cnp):
+    def get_age_group(cnp):
         today = datetime.datetime.today()
 
         if int(cnp[0]) <= 2:
